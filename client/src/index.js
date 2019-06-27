@@ -9,6 +9,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
 
 if (process.env.NODE_ENV === 'production') {
   sentry.init({
@@ -28,7 +29,9 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('root'),
 );
