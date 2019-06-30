@@ -1,0 +1,49 @@
+.tripsInfo {
+  position: absolute;
+  margin: 0 auto;
+  top: 14%;
+  left: 15%;
+  width: 70%;
+  height: 80%;
+  border: 1px solid #888888;
+  box-shadow: 10px 10px 8px #888888;
+  display: flex;
+  font-family: 'Libre Baskerville';
+}
+
+.left-trip {
+  height: 100%;
+  width: 35%;
+  background-color: rgba(36, 21, 124, 0.6);
+  flex: 1;
+}
+
+.left-image {
+  height: 35%;
+  width: 100%;
+  position: relative;
+}
+
+.left-image img {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  height: 50%;
+}
+
+.right-trip {
+  flex: 2;
+  margin-left: 2%;
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+.right-trip h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+span {
+  font-weight: bold;
+  margin-right: 5px;
+}
