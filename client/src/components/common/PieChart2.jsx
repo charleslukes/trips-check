@@ -25,9 +25,10 @@ function PieChart() {
         }),
       );
   }, []);
+
   return (
     <>
-      <Pie data={pieState.chartData} options={{}} />
+      <Pie data={pieState.chartData} options={{}} height={250} />
     </>
   );
 }
