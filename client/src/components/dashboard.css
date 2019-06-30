@@ -1,8 +1,12 @@
 .dash {
-  background-color: #eee;
   height: 100vh;
 }
 
 .chart-view {
+  background-color: #eee;
   padding: 20px 0;
+}
+.chart-info {
+  font-family: cursive;
+  font-weight: 700;
 }
