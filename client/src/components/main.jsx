@@ -7,7 +7,7 @@ import DriverDetails from './driverD';
 const Main = () => (
   <Switch>
     <Route exact path="/" component={DashBoard} />
-    <Route path="/trips" component={Trips} />
+    <Route path="/trip/:id" component={Trips} />
     <Route path="/driverD" component={DriverDetails} />
   </Switch>
 );
