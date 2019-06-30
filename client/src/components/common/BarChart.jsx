@@ -31,19 +31,9 @@ function BarChart() {
       );
   }, []);
 
-  // data: {
-  //   male: 30,
-  //   female: 20,
-  //   noOfCashTrips: 26,
-  //   noOfNonCashTrips: 24,
-  //   billedTotal: 128224.69,
-  //   cashBilledTotal: 69043.8,
-  //   nonCashBilledTotal: 59180.89,
-  // },
-
   return (
     <>
-      <Bar data={barState.chartData} options={{}} />
+      <Bar data={barState.chartData} height={300} options={{}} />
     </>
   );
 }
