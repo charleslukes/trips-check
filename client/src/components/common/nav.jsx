@@ -13,8 +13,6 @@ import {
   DropdownItem,
 } from 'reactstrap';
 import './nav.css';
-// import Trips from '../trips';
-// import DriverD from '../driverD'
 
 function NavBar() {
   const [dashState, dashUseState] = useState({ isOpen: false });
@@ -25,14 +23,11 @@ function NavBar() {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">Drivers DashBoard</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={dashState.isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="../trips/">Trips</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="../driverD/">Driver Details</NavLink>
             </NavItem>
