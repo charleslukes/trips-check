@@ -1,0 +1,68 @@
+.showsDriver {
+  display: flex;
+  font-family: 'Libre Baskerville';
+}
+
+.driversName {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 30rem;
+}
+
+.driversName div {
+  border: 1px solid #eee;
+  padding: 50px;
+  width: 90%;
+  height: 70%;
+  margin: 5px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+.driversName button {
+  position: absolute;
+  top: 45px;
+  left: 320px;
+  background-color: rgba(36, 21, 124, 0.6);
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  outline: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.driversName p {
+  font-weight: bold;
+}
+
+.showsDetails {
+  text-align: center;
+  border: 3px solid #eee;
+  box-shadow: 10px 10px 8px #888888;
+  width: 55rem;
+  height: 70vh;
+  margin: 5px auto 0 auto;
+}
+
+.details {
+  text-align: left;
+  margin: 10px 30px;
+  line-height: 50px;
+}
+
+.details span {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.showsDetails h1 {
+  font-weight: 700;
+  font-family: Raleway;
+  background-color: rgba(36, 21, 124, 0.6);
+}
