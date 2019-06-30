@@ -1,45 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table } from 'reactstrap';
-
-// to be generated dynamically
-// this is a fake data.
+import { Link } from 'react-router-dom';
 
 function List() {
+  const [table, updateTable] = useState([]);
+  const [driverId, updateDriver] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/trips')
+      .then(data => data.json())
+      .then(data => updateTable(data.data));
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/drivers')
+      .then(data => data.json())
+      .then(data => updateDriver(data.data));
+  }, []);
+
+  const getDriver = x => {
+    return driverId.find(elem => {
+      if (elem.driverID === x) {
+        return elem.name;
+      }
+    });
+  };
+
   return (
-    <Table>
-      <thead className="t-head">
-        <tr>
-          <th>#</th>
-          <th>info</th>
-          <th>user</th>
-          <th>driver</th>
-          <th>amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>$3450</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>$1230</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>$900</td>
-        </tr>
-      </tbody>
-    </Table>
+    <div className="t-body">
+      <Table>
+        <thead className="t-head">
+          <tr>
+            <th>#</th>
+            <th>info</th>
+            <th>user</th>
+            <th>driver</th>
+            <th>amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {table.map((elem, index) => {
+            const name = () => {
+              try {
+                return getDriver(elem.driverID).name;
+              } catch (error) {
+                return 'not found';
+              }
+            };
+            return (
+              <tr>
+                <th scope="row" key={index}>
+                  {index + 1}
+                </th>
+                <th>
+                  <Link to={`/trip/${elem.tripID}`}>
+                    <i className={`fas fa-info-circle`} />
+                  </Link>
+                </th>
+                <td>{elem.user.name}</td>
+                <td>{name()}</td>
+                <td>N{elem.billedAmount}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    </div>
   );
 }
 
